@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>Shopping | Мужские шапки</title>
+<meta charset="UTF-8">
+<meta name="description" content=" Divisima | eCommerce Template">
+<meta name="keywords" content="divisima, eCommerce, creative, html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="shortcut icon"/>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jqcart.css">
+<link rel="stylesheet" href="css/cart.css">
+<body>
+<h4>Цена</h4>
+<div id="slider"></div>
+        <p>
+<label for="amount"></label>
+<label for="amountMax"></label>
+<input type="text" id="minprice"name="minprice" readonly style="border:0; color:#333; ">
+<input type="text" id="maxprice"name="maxprice"  readonly style="border:0; color:#333; float: right;width: 40px">
+</p>
+<div id="output"></div>
+</div>
+
+
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scriptHtml.js"></script>
+<script src="js/jqcart.min.js"></script>
+<script src="js/snap.svg-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var details = {
+        "Printer Cable":4,
+        "Stylus Pen":10,
+        "Computer Speaker":14,
+        "USB Microphone":19,
+        "Headset":24,
+        "Memory Card":29,
+        "USB Hub":36,
+        "Security Key":40,
+        "Printer Cable":45,
+        "Webcam":50,
+        "Card":169,
+        "Hub":356,
+        "Key":40,
+        "Printer":445,
+        "Camera":450,
+    };
+    $( "#slider" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 0, 500 ],
+      slide: function( event, ui ) {
+        $( "#minprice" ).val( ui.values[ 0 ]+" c" );
+        $( "#maxprice" ).val( ui.values[ 1 ]+" c" );
+        getDetails(ui.values[0],ui.values[1]);
+      }
+    });
+    $("#minprice").val($( "#slider").slider( "values", 0 )+" c")
+    $("#maxprice").val($( "#slider").slider( "values", 1 )+" c");
+    var currennt = $("#slider").slider("option","values");
+    getDetails(currennt[0],currennt[1]);
+    function getDetails(minium,maxsimum){
+        $("#range").html(`C ${minium} до ${maxsimum}`);
+        var result = "<table><tr><th>product Name</th>   <th>Price</th></tr>";
+        for (var item in details){
+            if (details[item] >= minium && details[item]<= maxsimum) {
+                result+= "<tr><td>"+item+"</td><td>"+details[item]+"</td></tr>";
+            }
+        }
+        result+= `</table>`;
+        $("#output").html(result);
+    }
+    })
+</script>
+</body>
+</html>

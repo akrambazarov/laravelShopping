@@ -1,0 +1,152 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+body{
+background: linear-gradient(45deg,#5193f4,#f9724f);
+	height: 100vh;
+}
+.container{
+	width: 60%;
+	height: 100vh;
+float: left;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	background: url(../img/495078-PHE68U-271.jpg), #151729;
+	background-size: 100%;
+	box-shadow: 0 15px 30px rgba(0,0,0,.5);
+
+}
+.container .text-title,.welcome{
+position: fixed;
+left: 21%;
+bottom: 60px;
+display: flex;
+}
+.container h2{
+	text-align: center;
+	font-size: 2.3rem;
+	color: #5193f4;margin: 0 auto;
+	font-family: "Trebuchet MS",Helevetica,sans-serif;
+}
+.container h2:nth-child(1){ animation: colorTitle 2.5s ease ;  }
+.container h2:nth-child(2){ animation: colorTitle 2.1s ease ; }
+.container h2:nth-child(3){ animation: colorTitle   1s ease ;  }
+.container h2:nth-child(4){ animation: colorTitle 3.5s ease ; }
+.container h2:nth-child(5){ animation: colorTitle 1.3s ease ; }
+.container h2:nth-child(6){ animation: colorTitle 2.4s ease ; }
+.container h2:nth-child(7){ animation: colorTitle 2.6s ease ; }
+.container h2:nth-child(8){ animation: colorTitle 2.3s ease ; }
+.container h2:nth-child(9){ animation: colorTitle 2.5s ease ; }
+.container h2:nth-child(10){ animation: colorTitle 3.1s ease ; }
+.container h2:nth-child(11){ animation: colorTitle 3.6s ease-in ;  }
+@keyframes colorTitle{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+/*-----------------------Sign in-----------------*/
+.sign-in{
+	width: 40%;
+	float: right;
+	margin: 0 auto;
+}
+.login-form{
+	width: 340px;
+	background-color: rgba(0,0,0,0.2);
+	height: 420px;
+	padding: 80px 40px;
+	border-radius: 10px;
+margin: 0 auto;
+	transform: translateY(33%);
+}
+.login-form img{
+	border-radius: 50%;
+
+	margin-left: 65px;
+	transform: translateY(-33px);
+		margin-top: -150px;
+}
+.login-form h1{
+	font-family: "Myanmar Text",sans-serif;
+	letter-spacing: 3px;
+	font-weight: 200;
+
+	margin-bottom: 30px;
+}
+.txtb{
+	border-bottom: 2px solid #adadad;
+	position: relative;
+	margin: 30px 0;
+}
+.txtb input{
+	font-size: 19px;
+	color: #fff;
+	border: none;
+	outline: none;
+	width: 100%;
+	background: none;
+		font-family: monospace;
+	padding: 0 5px;
+	height: 40px;
+}
+.txtb span::before{
+	content: attr(data-placeholder);
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	font-family: monospace;
+	color: #adadad;
+	transform: translateY(-50%);
+	z-index:-1;
+	transition: .5s;
+}
+.txtb span::after{
+	content: '';
+	position: absolute;
+	width: 0%;
+	top: 40px;
+	left: 0;
+	height: 2px;
+	background: linear-gradient(120deg,#3498db,#8e44ad) ;
+	transition: .5s;
+}
+.focus+span::before{
+	top: -5px;
+}
+.focus +span::after{
+	width: 100%;
+}
+.logbtn{
+width: 100%;
+height: 50px;
+background-size: 200%;
+border: none;
+color: #fff;
+letter-spacing: 3px;
+font-weight: 300;
+font-family: cursive;
+cursor: pointer;
+font-size: 26px;
+border-radius: 3px;
+transition: .5s;
+background-image: linear-gradient(120deg,#3498db,#8e44ad) ;
+}
+.logbtn:hover{
+	background-position: right;
+}
+.bottom-text{
+margin-top: 60px;
+text-align: center;
+font-size: 22px;
+}
+.bottom-text a{
+	margin-left: 10px;
+	color: #3498db;
+}

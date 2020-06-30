@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Error|Ошибка</title>
+</head>
+<body>
+	<style type="text/css">
+*{
+	padding: 0;	
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+	body{
+	background: linear-gradient(100deg,#b3e0ff,#ecf2fe);
+	height: 100vh;
+}
+.container{
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	border-radius: 10px;
+	width: 90%;
+	height: 90%;
+	margin:0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	background: url(img/404_7737-1498.jpg) ;
+background-blend-mode: multiply;
+background-size: contain;
+	box-shadow: 0 15px 30px rgba(0,0,0,.5);
+}
+.container .content{
+	max-width: 600px;
+	text-align:center;
+}
+.container .content h2{
+	font-size: 18vw;
+	color: #333;
+	line-height: 1em; 
+}
+.container .content h4{
+	position: relative;
+	font-size: 1.5em;
+	color: #111;
+	margin-bottom: 20px;
+	background: #fff;
+	font-weight: 300;
+	padding: 10px 20px;
+	display: inline-block;
+}
+.container .content p{
+	font-size: 1.2em;
+	color: #333;
+}
+.container .content a{
+	position: relative;
+	display: inline-block;
+	padding: 10px 25px;
+	background: #fe5957;
+	color: #fff;
+	text-decoration: none;
+	margin-top: 25px;
+	border-radius: 25px;
+	border-bottom:  4px solid #fe5752; 
+}
+
+	</style>
+	<div class="container">
+		<div class="content">
+			<h2>404</h2>
+			<h4>Ooops! Page not found</h4>
+			<p>Страница не найдена. </p>
+			<a href="index.html">Back to Home</a>
+		</div>
+	</div>
+	<script>
+		var container = document.querySelector('.container');
+window.onmousemove = function(e){
+	console.log(e);
+var x = - e.clientX / 5,
+	y = - e.clientY / 5;
+	container.style.backgroundPositionX = x + 'px';
+	container.style.backgroundPositionY = y + 'px';
+
+}
+	</script>
+<!-- <script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script> -->
+</body>
+</html>

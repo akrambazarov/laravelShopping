@@ -1,0 +1,84 @@
+jQuery(document).ready(function($){
+	$("#lightSlider").lightSlider({
+		item:10,
+		loop:false,
+		slideMove:3,
+		speed:300,
+		slideMargin:0,
+		responsive:[
+		{
+			breakpoint:950,
+			settings:{
+				item:6,
+				loop:false,
+				slideMove:4,
+				//slideMargin:0,
+				speed:1000
+			}
+		},
+		{
+			breakpoint:650,
+			settings:{
+				item:3,
+			
+			}
+		
+		}]
+	});
+});
+jQuery(document).ready(function($){
+	$("#WomenlightSlider").lightSlider({
+		item:10,
+		loop:false,
+		slideMove:3,
+		speed:300,
+		slideMargin:0,
+		responsive:[
+		{
+			breakpoint:950,
+			settings:{
+				item:6,
+				loop:false,
+				slideMove:4,
+				//slideMargin:0,
+				speed:1000
+			}
+		},
+		{
+			breakpoint:650,
+			settings:{
+				item:4,
+			
+			}
+		
+		}]
+	});
+});
+jQuery(document).ready(function($){
+	$("#MenlightSlider").lightSlider({
+		item:10,
+		loop:false,
+		slideMove:3,
+		speed:300,
+		slideMargin:0,
+		responsive:[
+		{
+			breakpoint:950,
+			settings:{
+				item:6,
+				loop:false,
+				slideMove:4,
+				//slideMargin:0,
+				speed:1000
+			}
+		},
+		{
+			breakpoint:650,
+			settings:{
+				item:4,
+			
+			}
+		
+		}]
+	});
+});

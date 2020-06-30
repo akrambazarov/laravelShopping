@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="script/js/bootstrap.min.css">
+</head>
+<body onload="tableDate()">
+<div class="container-fluid">
+	<table  id="tabledit" class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Country</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+</div>
+<script src="script/js/jquery-3.2.1.min.js"></script>
+<script src="script/js/bootstrap.min.js"></script>
+<script src="php/jquery-tabledit/jquery.tabledit.min.js"></script>
+<script>
+
+
+	//console.log(21);
+
+		
+	function tableDate(){
+		$('#tabledit').Tabledit({
+		    url: 'php/proccess.php',
+		    eventType: 'dblclick',
+		    editButton: true,
+		    deleteButton:true,
+		    hideIdentifier: false,
+		    buttons: {
+		    	edit:{
+		    		class:' btn btn-sm btn-default',
+		    		html: '<span class="glyphicon glyphicon-pencil"></span> Edit',
+		    		action: 'edit'
+		    	},
+		        delete: {
+		            class: 'btn btn-sm btn-danger',
+		            html: '<span class="glyphicon glyphicon-trash"></span> &nbsp DELETE',
+		            action: 'delete'
+		        },
+		        save: {
+		            class: 'btn btn-sm btn-success',
+		            action: 'Save'
+		        },
+		        restore: {
+		            class: 'btn btn-sm btn-warning',
+		            html: 'Restore',
+		            action: 'restore'
+		        },
+		        confirm: {
+		            class: 'btn btn-sm btn-default',
+		            html: 'Are you sure?'
+		        }
+		    },
+		    columns: {
+		        identifier: [0, 'ID'],
+		        editable: [[1, 'name'], [2, 'phonenumber'], [3, 'country', '{"1": "Tajikisatan", "2": "Captain America", "3": "Russian"}'],[4,'login'],[5,'password']]
+		    },
+		    onSuccess: function(data, textStatus, jqXHR) {
+			viewDate();
+		    },
+		    onFail: function(jqXHR, textStatus, errorThrown) {
+		        console.log('onFail(jqXHR, textStatus, errorThrown)');
+		        console.log(jqXHR);
+		        console.log(textStatus);
+		        console.log(errorThrown);
+		    },
+		    onAjax: function(action, serialize) {
+		        console.log('onAjax(action, serialize)');
+		        console.log(action);
+		        console.log(serialize);
+		    }
+		});
+	}
+		function viewDate() {
+		$.ajax({
+			url: 'php/proccess.php?p=view',
+			method:'GET'
+		}).done(function(data){
+			$('tbody').html(data);
+			alert(data);
+			tableDate()
+		})
+	}
+</script>
+</body>
+</html>

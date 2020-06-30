@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h2> Product </h2>
+		</div>
+		<div class="row" id="row1"></div>
+		<div class="row">
+			<h3>Shopping Cart</h3>
+		</div>
+		<div class="row" id="row2">
+			<table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Remove</th>
+						<th scope="col">Image</th>
+						<th scope="col">Name</th>
+						<th scope="col">Quantity</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>
+				<tbody id="tableProduct">
+					
+				</tbody>
+				<tfoot id="total">
+					
+				</tfoot>
+			</table>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+function buy(){
+	products = {
+		id: 1,
+		name:'apple',
+		img:'1505.jpg',
+		title:' apple 1505.jpg',
+		price: 1200,
+		quntity:1,
+		total:0
+	},
+	{
+		id: 2,
+		name:'Samsung s6 Edge',
+		img:'1505.jpg',
+		title:' Samsung 1505.jpg',
+		price: 1000,
+		quntity:1,
+		total:0
+	},
+	{
+		id: 3,
+		name:'Xiami',
+		img:'1505.jpg',
+		title:' Xiami 1505.jpg',
+		price: 1600,
+		quntity:1,
+		total:0
+	},{
+		id: 4,
+		name:'BlackBarry',
+		img:'1505.jpg',
+		title:' BlackBarry 1505.jpg',
+		price: 300,
+		quntity:1,
+		total:0
+	},{
+		id: 5,
+		name:'Macbook',
+		img:'1505.jpg',
+		title:' Macbook 1505.jpg',
+		price: 3600,
+		quntity:1,
+		total:0
+	},
+	var productBase = [];
+	for (var i = 0; i < i.products.lenght; i++) {
+		if (products[i].cart) {
+			product = {
+				name: products[i].name,
+				image: products[i].image,
+				price: products[i].price,
+				total: products[i].total,
+				quntity: products[i].quntity,
+			}
+			productBase.push(product);
+		}
+	}
+}
+
+		(()=>{
+
+		})
+		();
+	</script>
+</body>
+</html>
